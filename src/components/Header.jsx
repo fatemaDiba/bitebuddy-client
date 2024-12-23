@@ -79,8 +79,8 @@ const Header = () => {
                 {navList}
               </ul>
             </div>
-            <a className="text-xl dark:text-white md:text-2xl font-bold ml-3">
-              FOOD SHARE
+            <a className="text-xl dark:text-white md:text-3xl font-bold ml-3">
+              BiteBuddy
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
