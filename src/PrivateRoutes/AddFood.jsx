@@ -3,9 +3,11 @@ import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Auth/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
+  const axiosBase = useAxios();
   const navigate = useNavigate();
 
   const handleAddFoodBtn = (e) => {
@@ -18,6 +20,8 @@ const AddFood = () => {
     const exDate = form.date.value;
     const note = form.note.value;
     const userEmail = user.email;
+    const userName = user.displayName;
+    const userUrl = user.photoURL;
 
     if (!foodName || foodName.length < 2) {
       toast.error("Please give valid name!");
@@ -36,21 +40,16 @@ const AddFood = () => {
       exDate,
       note,
       userEmail,
+      userName,
+      userUrl,
     };
-    console.log(foodAddFormData);
-    // fetch("https://movie-protal-server.vercel.app/add-movie", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(movieAddFormData),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     toast.success("Successfully Added Movie");
-    //     form.reset();
-    //     navigate("/all-movies");
-    //   });
+
+    axiosBase
+      .post("/foods/add-food", foodAddFormData)
+      .then((res) => console.log(res.data))
+      .catch(() => {
+        toast.error("Something went wrong");
+      });
   };
 
   return (
