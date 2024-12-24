@@ -8,6 +8,8 @@ import AddFood from "../PrivateRoutes/AddFood";
 import RequestMyFood from "../PrivateRoutes/RequestMyFood";
 import ManageMyFoods from "../PrivateRoutes/ManageMyFoods";
 import AvailableFoods from "../pages/AvailableFoods";
+import PrivateRoute from "../PrivateRoutes/private/PrivateRoute";
+import PrivateRegLog from "../PrivateRoutes/private/PrivateRegLog";
 
 const router = createBrowserRouter([
   {
@@ -25,23 +27,43 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: (
+          <PrivateRegLog>
+            <Login></Login>
+          </PrivateRegLog>
+        ),
       },
       {
         path: "/register",
-        element: <Register></Register>,
+        element: (
+          <PrivateRegLog>
+            <Register></Register>
+          </PrivateRegLog>
+        ),
       },
       {
         path: "/add-food",
-        element: <AddFood></AddFood>,
+        element: (
+          <PrivateRoute>
+            <AddFood></AddFood>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/request-myfood",
-        element: <RequestMyFood></RequestMyFood>,
+        element: (
+          <PrivateRoute>
+            <RequestMyFood></RequestMyFood>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/manage-myfoods",
-        element: <ManageMyFoods></ManageMyFoods>,
+        element: (
+          <PrivateRoute>
+            <ManageMyFoods></ManageMyFoods>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
+import Usection from "./unique/Usection";
 
 const Home = () => {
   return (
@@ -7,6 +8,7 @@ const Home = () => {
       <Helmet>Home-BiteBuddy</Helmet>
       <div>
         <Banner></Banner>
+        <Usection></Usection>
       </div>
     </div>
   );
