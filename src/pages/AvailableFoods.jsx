@@ -16,7 +16,6 @@ const AvailableFoods = () => {
       .get("/foods/available-foods")
       .then((res) => {
         setFoods(res.data);
-        console.log(res.data);
         setLoading(false);
       })
       .catch(() => {
