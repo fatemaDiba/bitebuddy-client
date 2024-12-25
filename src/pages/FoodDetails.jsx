@@ -24,7 +24,7 @@ const FoodDetails = () => {
     requestModal.current.showModal();
   };
 
-  const handleCloseModal = () => {
+  const handleRequestModal = () => {
     requestModal.current.close();
   };
 
@@ -50,10 +50,10 @@ const FoodDetails = () => {
               <h1 className="text-xl md:text-3xl text-black  dark:text-white font-bold mb-5">
                 {food.foodName}
               </h1>
-              <p className=" text-base md:text-lg font-semibold">
-                Food Id:
-                <span className="font-semibold ml-2 text-sm md:text-base">
-                  {food._id}
+              <p className="text-base md:text-lg font-semibold">
+                Quantity:
+                <span className="font-semibold ml-2  text-sm md:text-base">
+                  {food.quantity}
                 </span>
               </p>
               <p className="text-base md:text-lg font-semibold">
@@ -82,11 +82,41 @@ const FoodDetails = () => {
                   Request Food
                 </button>
 
+                {/* modal */}
                 <dialog ref={requestModal} className="modal">
-                  <div className="modal-box">
-                    <h3 className="font-bold text-lg">Hello!</h3>
-                    <p className="py-4">
-                      Press ESC key or click the button below to close
+                  <div className="modal-box p-10">
+                    <h1 className="text-2xl md:text-4xl text-black  dark:text-white font-bold mb-5">
+                      {food.foodName}
+                    </h1>
+                    <p className="text-base  md:text-lg font-semibold">
+                      Quantity:
+                      <span className="font-semibold ml-2  text-sm md:text-base">
+                        {food.quantity}
+                      </span>
+                    </p>
+                    <p className="text-base md:text-lg font-semibold">
+                      PickUp Location:
+                      <span className="font-semibold ml-2  text-sm md:text-base">
+                        {food.location}
+                      </span>
+                    </p>
+                    <p className=" text-base md:text-lg font-semibold">
+                      Food Id:
+                      <span className="font-semibold ml-2 text-sm md:text-base">
+                        {food._id}
+                      </span>
+                    </p>
+                    <p className="text-base md:text-lg font-semibold">
+                      Expire Date:
+                      <span className="font-semibold ml-2  text-sm md:text-base">
+                        {food.exData}
+                      </span>
+                    </p>
+                    <p className="text-base md:text-lg font-semibold">
+                      Note:
+                      <span className="font-semibold ml-2 text-sm md:text-base">
+                        {food.note}
+                      </span>
                     </p>
                     <ul>
                       <p className="text-base md:text-lg font-semibold">
@@ -113,8 +143,8 @@ const FoodDetails = () => {
                     </p>
                     <div className="modal-action">
                       <form method="dialog">
-                        <button onClick={handleCloseModal} className="btn">
-                          Close
+                        <button onClick={handleRequestModal} className="btn">
+                          Request
                         </button>
                       </form>
                     </div>

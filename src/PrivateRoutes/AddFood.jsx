@@ -46,7 +46,7 @@ const AddFood = () => {
 
     axiosBase
       .post("/foods/add-food", foodAddFormData)
-      .then((res) => console.log(res.data))
+      .then((res) => toast.success("Successfully Added Food"))
       .catch(() => {
         toast.error("Something went wrong");
       });
