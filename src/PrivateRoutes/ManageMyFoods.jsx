@@ -36,12 +36,12 @@ const ManageMyFoods = () => {
   };
 
   return (
-    <div className="container w-9/12 mx-auto mb-20 mt-10">
+    <div className="container w-10/12 mx-auto mb-20 mt-10  bg-pink-100 px-14 py-5 rounded-2xl">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="font-bold text-base text-black/70 mb-5">
               <th></th>
               <th>Food Name</th>
               <th>Quantity</th>
@@ -63,12 +63,15 @@ const ManageMyFoods = () => {
 
                   <td>
                     <div className="flex flex-row gap-3">
-                      <Link to={`/update-food/${food._id}`} className="btn">
+                      <Link
+                        to={`/update-food/${food._id}`}
+                        className="btn bg-blue-200 border border-black/50"
+                      >
                         Update
                       </Link>
                       <button
                         onClick={() => handleDeleteBtn(food._id)}
-                        className="btn"
+                        className="btn  bg-blue-200 border border-black/50"
                       >
                         Delete
                       </button>

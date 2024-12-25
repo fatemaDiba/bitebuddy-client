@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Auth/AuthProvider";
@@ -14,6 +14,7 @@ const FoodDetails = () => {
   const [food, setFood] = useState({});
   const { user } = useContext(AuthContext);
   const requestModal = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const date = moment().format("DD-MM-YYYY");
@@ -21,7 +22,10 @@ const FoodDetails = () => {
   }, []);
 
   const handleModal = () => {
-    requestModal.current.showModal();
+    if (user) {
+      return requestModal.current.showModal();
+    }
+    return navigate("/login");
   };
 
   const handleNote = (e) => {
@@ -33,8 +37,9 @@ const FoodDetails = () => {
     const requestData = {
       foodName: food.foodName,
       location: food.location,
-      userName: food.userName,
+      donner: food.userName,
       exDate: food.exDate,
+      user: user.email,
       note,
       currentDate,
     };
@@ -44,6 +49,7 @@ const FoodDetails = () => {
       .then((res) => {
         toast.success("Successfully Added Food To My Request");
         requestModal.current.close();
+        navigate("/request-myfood");
       })
       .catch(() => {
         toast.error("Something went wrong");
@@ -122,12 +128,7 @@ const FoodDetails = () => {
                         {food.location}
                       </span>
                     </p>
-                    <p className=" text-base md:text-lg font-semibold">
-                      Food Id:
-                      <span className="font-semibold ml-2 text-sm md:text-base">
-                        {food._id}
-                      </span>
-                    </p>
+
                     <p className="text-base md:text-lg font-semibold">
                       Expire Date:
                       <span className="font-semibold ml-2  text-sm md:text-base">
