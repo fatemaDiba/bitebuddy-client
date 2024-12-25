@@ -46,7 +46,10 @@ const AddFood = () => {
 
     axiosBase
       .post("/foods/add-food", foodAddFormData)
-      .then((res) => toast.success("Successfully Added Food"))
+      .then((res) => {
+        toast.success("Successfully Added Food");
+        navigate("/available-foods");
+      })
       .catch(() => {
         toast.error("Something went wrong");
       });
@@ -90,7 +93,9 @@ const AddFood = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text  dark:text-white">Food Name</span>
+                  <span className="label-text  dark:text-white">
+                    Pick up location
+                  </span>
                 </label>
                 <input
                   type="text"
