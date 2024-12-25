@@ -8,7 +8,7 @@ import moment from "moment";
 
 const FoodDetails = () => {
   const [currentDate, setCurrentDate] = useState("");
-
+  const [note, setNote] = useState();
   const { id } = useParams();
   const axiosBase = useAxios();
   const [food, setFood] = useState({});
@@ -24,8 +24,30 @@ const FoodDetails = () => {
     requestModal.current.showModal();
   };
 
-  const handleRequestModal = () => {
-    requestModal.current.close();
+  const handleNote = (e) => {
+    const noteData = e.target.value;
+    setNote(noteData);
+  };
+
+  const handleRequest = () => {
+    const requestData = {
+      foodName: food.foodName,
+      location: food.location,
+      userName: food.userName,
+      exDate: food.exDate,
+      note,
+      currentDate,
+    };
+
+    axiosBase
+      .post(`/foods/request-food/${id}`, requestData)
+      .then((res) => {
+        toast.success("Successfully Added Food To My Request");
+        requestModal.current.close();
+      })
+      .catch(() => {
+        toast.error("Something went wrong");
+      });
   };
 
   useEffect(() => {
@@ -65,7 +87,7 @@ const FoodDetails = () => {
               <p className="text-base md:text-lg font-semibold">
                 Expire Date:
                 <span className="font-semibold ml-2  text-sm md:text-base">
-                  {food.exData}
+                  {food.exDate}
                 </span>
               </p>
               <p className="text-base md:text-lg font-semibold">
@@ -84,7 +106,7 @@ const FoodDetails = () => {
 
                 {/* modal */}
                 <dialog ref={requestModal} className="modal">
-                  <div className="modal-box p-10">
+                  <div className="modal-box space-y-1 p-10">
                     <h1 className="text-2xl md:text-4xl text-black  dark:text-white font-bold mb-5">
                       {food.foodName}
                     </h1>
@@ -109,15 +131,18 @@ const FoodDetails = () => {
                     <p className="text-base md:text-lg font-semibold">
                       Expire Date:
                       <span className="font-semibold ml-2  text-sm md:text-base">
-                        {food.exData}
+                        {food.exDate}
                       </span>
                     </p>
-                    <p className="text-base md:text-lg font-semibold">
-                      Note:
-                      <span className="font-semibold ml-2 text-sm md:text-base">
-                        {food.note}
-                      </span>
-                    </p>
+                    <div className="text-base md:text-lg font-semibold">
+                      <p className="mb-2">Note:</p>
+                      <textarea
+                        className="textarea textarea-bordered"
+                        placeholder="Note"
+                        defaultValue={food.note}
+                        onChange={handleNote}
+                      ></textarea>
+                    </div>
                     <ul>
                       <p className="text-base md:text-lg font-semibold">
                         Donner:
@@ -143,7 +168,10 @@ const FoodDetails = () => {
                     </p>
                     <div className="modal-action">
                       <form method="dialog">
-                        <button onClick={handleRequestModal} className="btn">
+                        <button
+                          onClick={handleRequest}
+                          className="btn bg-purple-400 text-black font-bold"
+                        >
                           Request
                         </button>
                       </form>

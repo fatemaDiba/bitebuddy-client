@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import useAxios from "../hooks/useAxios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const UpdateFood = () => {
   const { id } = useParams();
   const [food, setFood] = useState({});
   const axiosBase = useAxios();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosBase
@@ -50,7 +51,10 @@ const UpdateFood = () => {
 
     axiosBase
       .put(`/foods/update-food/${id}`, foodUpdateFormData)
-      .then((res) => toast.success("Successfully Updated Food"))
+      .then((res) => {
+        toast.success("Successfully Updated Food");
+        navigate("/available-foods");
+      })
       .catch(() => {
         toast.error("Something went wrong");
       });
