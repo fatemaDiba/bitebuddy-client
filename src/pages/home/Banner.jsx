@@ -3,11 +3,11 @@ const Banner = () => {
     <div className="mb-20 mx-auto">
       <div className="relative w-full h-[45vh] md:h-[75vh]">
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white p-4">
-          <div className="bg-black/30 backdrop-blur-md p-6 rounded-lg w-9/12 md:max-w-3xl space-y-4 dark:text-white">
+          <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg w-9/12 md:max-w-3xl space-y-4 dark:text-white">
             <h1 className="text-xl md:text-4xl font-bold">
               Cook, Share, Connect!
             </h1>
-            <p className="text-base md:text-  md:w-[75%] mx-auto">
+            <p className="text-base md:text-lg md:w-[75%] text-white mx-auto">
               Turn your meals into moments of joy. Share your dishes and bond
               with a community that loves food as much as you do.
             </p>

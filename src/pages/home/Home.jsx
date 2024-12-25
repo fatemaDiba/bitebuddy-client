@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
-import Usection from "./unique/Usection";
 import FoodLove from "./unique/FoodLove";
 import FeaturedFoods from "./FeaturedFoods";
+import DonationSection from "./unique/DonationSection";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
         <Banner></Banner>
         <FeaturedFoods></FeaturedFoods>
         <FoodLove></FoodLove>
-        <Usection></Usection>
+        <DonationSection></DonationSection>
       </div>
     </div>
   );

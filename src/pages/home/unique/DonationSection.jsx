@@ -1,6 +1,6 @@
-const Usection = () => {
+const DonationSection = () => {
   return (
-    <div className="bg-gray-100 w-11/12 mx-auto p-4 sm:p-16 dark:bg-gray-900 rounded-xl">
+    <div className="mb-5 bg-gray-100 w-11/12 mx-auto p-4 sm:p-16 dark:bg-gray-900 rounded-xl">
       <div className="p-4 mb-6  mx-auto text-center leading-tight first-letter:capitalize dark:text-gray-100">
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
           Spreed Smile!
@@ -100,4 +100,4 @@ const Usection = () => {
   );
 };
 
-export default Usection;
+export default DonationSection;
