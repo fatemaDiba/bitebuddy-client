@@ -28,8 +28,8 @@ const AddFood = () => {
       return;
     }
 
-    if (!note || note.length < 10) {
-      toast.error("Please give a Summary at least 10 character!");
+    if (!note || note.length < 5) {
+      toast.error("Please give a note at least 5 character!");
       return;
     }
     const foodAddFormData = {

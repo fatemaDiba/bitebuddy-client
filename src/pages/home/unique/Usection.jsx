@@ -1,13 +1,11 @@
-import React from "react";
-
 const Usection = () => {
   return (
     <div className="bg-gray-100 w-11/12 mx-auto p-4 sm:p-16 dark:bg-gray-900 rounded-xl">
-      <div className="p-4 mb-6 w-[90%] mx-auto text-center leading-tight first-letter:capitalize dark:text-gray-100">
+      <div className="p-4 mb-6  mx-auto text-center leading-tight first-letter:capitalize dark:text-gray-100">
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
           Spreed Smile!
         </h2>
-        <p className=" text-base w-[70%] mx-auto text-center">
+        <p className=" text-base md:w-[70%] mx-auto text-center">
           Join us in our mission to fight hunger by donating surplus food.
           Together, we can make a difference and provide meals to those in need.
           Every contribution counts!
