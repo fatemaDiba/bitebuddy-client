@@ -4,7 +4,7 @@ import { AuthContext } from "../Auth/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const instance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://bitebuddy-lovat.vercel.app",
   withCredentials: true,
 });
 const useAxiosSecure = () => {

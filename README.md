@@ -1,5 +1,5 @@
 <h1>Project Name: BiteBuddy</h1>
-<h2>Link: <a href="">Click here to access the BiteBuddy</a></h2>
+<h2>Link: <a href="https://bitebuddy-by-fatema.surge.sh/">Click here to access the BiteBuddy</a></h2>
 
 <h2>Purpose:</h2>
 
