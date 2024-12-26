@@ -3,14 +3,16 @@ import useAxios from "../hooks/useAxios";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const ManageMyFoods = () => {
   const [foods, setFoods] = useState([]);
   const axiosBase = useAxios();
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const email = user.email;
   useEffect(() => {
-    axiosBase
+    axiosSecure
       .post("/foods/manage-myfoods", { email })
       .then((res) => {
         setFoods(res.data);

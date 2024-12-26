@@ -21,10 +21,6 @@ const AvailableFoods = () => {
     setGrid(!grid);
   };
 
-  const filteredFood = foods.filter((food) => {
-    return food.foodName.toLowerCase().includes(query.toLowerCase());
-  });
-
   useEffect(() => {
     setLoading(true);
     axiosBase
@@ -37,6 +33,11 @@ const AvailableFoods = () => {
         toast.error("Something went wrong");
       });
   }, []);
+
+  const filteredFood = foods?.filter((food) => {
+    return food.foodName.toLowerCase().includes(query?.toLowerCase());
+  });
+
   return (
     <div>
       <Helmet>

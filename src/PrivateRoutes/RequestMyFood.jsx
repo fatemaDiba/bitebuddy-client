@@ -2,15 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import useAxios from "../hooks/useAxios";
 import { AuthContext } from "../Auth/AuthProvider";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const RequestMyFood = () => {
   const [foods, setFoods] = useState([]);
   const axiosBase = useAxios();
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const email = user.email;
 
   useEffect(() => {
-    axiosBase
+    axiosSecure
       .post("/foods/requested-foods", { email })
       .then((res) => {
         setFoods(res.data);

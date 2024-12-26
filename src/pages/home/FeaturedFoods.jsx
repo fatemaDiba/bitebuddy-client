@@ -23,7 +23,7 @@ const FeaturedFoods = () => {
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
           Share a Meal, Share the Love
         </h2>
-        <p lassName="text-base w-[70%] mx-auto text-center">
+        <p className="text-base w-[70%] mx-auto text-center">
           Your small act of kindness can bring a big smile. Explore our featured
           dishes and contribute to providing meals for those in need. Together,
           we can make a difference, one plate at a time.

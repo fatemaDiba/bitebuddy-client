@@ -34,21 +34,15 @@ const Header = () => {
       <li>
         <NavLink to="/available-foods">Available Foods</NavLink>
       </li>
-      {user && (
-        <li>
-          <NavLink to="/add-food">Add Food</NavLink>
-        </li>
-      )}
-      {user && (
-        <li>
-          <NavLink to="/manage-myfoods">Manage My Foods</NavLink>
-        </li>
-      )}
-      {user && (
-        <li>
-          <NavLink to="/request-myfood">My Food Request</NavLink>
-        </li>
-      )}
+      <li>
+        <NavLink to="/add-food">Add Food</NavLink>
+      </li>
+      <li>
+        <NavLink to="/manage-myfoods">Manage My Foods</NavLink>
+      </li>
+      <li>
+        <NavLink to="/request-myfood">My Food Request</NavLink>
+      </li>
     </>
   );
 
