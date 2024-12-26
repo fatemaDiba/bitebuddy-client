@@ -32,6 +32,12 @@ const AddFood = () => {
       toast.error("Please give a note at least 5 character!");
       return;
     }
+
+    if (!quantity || quantity < 0) {
+      toast.error("Please give quantity more than 0!");
+      return;
+    }
+
     const foodAddFormData = {
       foodName,
       foodImg,
@@ -111,6 +117,7 @@ const AddFood = () => {
                 </label>
                 <input
                   type="number"
+                  min={0}
                   name="quantity"
                   placeholder="quantity of food"
                   required

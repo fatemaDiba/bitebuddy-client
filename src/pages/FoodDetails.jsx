@@ -8,10 +8,10 @@ import moment from "moment";
 
 const FoodDetails = () => {
   const [currentDate, setCurrentDate] = useState("");
-  const [note, setNote] = useState();
   const { id } = useParams();
   const axiosBase = useAxios();
   const [food, setFood] = useState({});
+  const [note, setNote] = useState();
   const { user } = useContext(AuthContext);
   const requestModal = useRef();
   const navigate = useNavigate();
@@ -59,7 +59,10 @@ const FoodDetails = () => {
   useEffect(() => {
     axiosBase
       .post("/foods/food-details", { id: id })
-      .then((res) => setFood(res.data))
+      .then((res) => {
+        setFood(res.data);
+        setNote(res.data.note);
+      })
       .catch(() => {
         toast.error("Something went wrong");
       });
@@ -140,7 +143,7 @@ const FoodDetails = () => {
                       <textarea
                         className="textarea textarea-bordered"
                         placeholder="Note"
-                        defaultValue={food.note}
+                        defaultValue={note}
                         onChange={handleNote}
                       ></textarea>
                     </div>
