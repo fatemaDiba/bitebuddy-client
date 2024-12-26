@@ -4,38 +4,80 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import Loading from "../loading/Loading";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const ManageMyFoods = () => {
-  const [foods, setFoods] = useState([]);
+  // const [foods, setFoods] = useState([]);
   const axiosBase = useAxios();
   const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const email = user.email;
-  useEffect(() => {
-    axiosSecure
-      .post("/foods/manage-myfoods", { email })
-      .then((res) => {
-        setFoods(res.data);
-      })
-      .catch(() => {
-        toast.error("Something went wrong");
+
+  const queryClient = useQueryClient();
+
+  const {
+    data: foods = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["manageMyFoods", email],
+    queryFn: async () => {
+      const response = await axiosSecure.post("/foods/manage-myfoods", {
+        email,
       });
-  }, []);
+      return response.data;
+    },
+  });
+
+  const deleteFood = async (id) => {
+    const response = await axiosSecure.delete(`/foods/available-foods/${id}`);
+    return response.data;
+  };
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteFood,
+    onSuccess: (data, id) => {
+      toast.success("Successfully deleted food!");
+      queryClient.setQueryData(["manageMyFoods", email], (oldFoods = []) =>
+        oldFoods.filter((food) => food._id !== id)
+      );
+    },
+    onError: () => {
+      toast.error("Failed to delete food!");
+    },
+  });
 
   const handleDeleteBtn = (id) => {
-    axiosBase
-      .delete(`/foods/available-foods/${id}`)
-      .then((res) => {
-        if (res.data.deletedCount) {
-          const remainingFoods = foods.filter((food) => food._id !== id);
-          setFoods(remainingFoods);
-          toast.success("Successfully deleted food");
-        }
-      })
-      .catch(() => {
-        toast.error("Something went wrong");
-      });
+    deleteMutation.mutate(id);
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (isError) {
+    return (
+      <div className="text-center mt-10">
+        <p>Failed to load foods!</p>
+      </div>
+    );
+  }
+
+  // const handleDeleteBtn = (id) => {
+  //   axiosBase
+  //     .delete(`/foods/available-foods/${id}`)
+  //     .then((res) => {
+  //       if (res.data.deletedCount) {
+  //         const remainingFoods = foods.filter((food) => food._id !== id);
+  //         setFoods(remainingFoods);
+  //         toast.success("Successfully deleted food");
+  //       }
+  //     })
+  //     .catch(() => {
+  //       toast.error("Something went wrong");
+  //     });
+  // };
 
   return (
     <div className="container w-10/12 mx-auto mb-20 mt-10  bg-pink-100 px-14 py-5 rounded-2xl">
