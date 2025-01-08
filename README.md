@@ -35,7 +35,7 @@ To securely manage environment variables, create a `.env` file in the root of yo
 `NODE_ENV = development`
 ### Local Installation Guide
 
-Follow the steps below to set up and run the backend of the **ReadSphere Library Management System** locally:
+Follow the steps below to set up and run the backend of the **BiteBuddy Food Sharing Management** locally:
 
 1. **Clone the repository:**
 2. **Run npm install**
