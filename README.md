@@ -24,6 +24,7 @@
     <li>react-router-dom</li>
     <li>react-toastify</li>
 </ul>
+
 ### .env Setup
 To securely manage environment variables, create a `.env` file in the root of your project and include the following:
 
