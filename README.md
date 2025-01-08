@@ -24,3 +24,11 @@
     <li>react-router-dom</li>
     <li>react-toastify</li>
 </ul>
+### .env Setup
+To securely manage environment variables, create a `.env` file in the root of your project and include the following:
+
+`PORT = port number`
+`DB_USER = username` 
+`DB_Pass = db pass`
+`JWT_SECRET = use your own`
+`NODE_ENV = development`
