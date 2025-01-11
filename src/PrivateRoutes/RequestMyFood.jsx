@@ -3,6 +3,7 @@ import useAxios from "../hooks/useAxios";
 import { AuthContext } from "../Auth/AuthProvider";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const RequestMyFood = () => {
   const [foods, setFoods] = useState([]);
@@ -23,6 +24,9 @@ const RequestMyFood = () => {
   }, []);
   return (
     <div className=" w-11/12 mx-auto mb-12 mt-28 bg-light-secondary/50  px-10 py-5 rounded-2xl">
+      <Helmet>
+        <title>My Food Request-BiteBuddy</title>
+      </Helmet>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

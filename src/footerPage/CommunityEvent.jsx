@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const CommunityEvent = () => {
   return (
     <div>
+      <Helmet>
+        <title>Community Event-BiteBuddy</title>
+      </Helmet>
       <section className="w-10/12 mx-auto bg-[#faf4e9] mt-28 mb-12 md:mb-20 rounded-xl py-12">
         <div className="px-5">
           <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-12">

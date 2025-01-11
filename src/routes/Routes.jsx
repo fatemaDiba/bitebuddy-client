@@ -22,6 +22,7 @@ import Pizza from "../cookingblog/Pizza";
 import Salad from "../cookingblog/Salad";
 import SuccessStories from "../footerPage/SuccessStories";
 import CommunityEvent from "../footerPage/CommunityEvent";
+import Donate from "../pages/home/unique/Donate";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
             <UpdateFood></UpdateFood>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/donate",
+        element: <Donate></Donate>,
       },
       // footer section page
       {

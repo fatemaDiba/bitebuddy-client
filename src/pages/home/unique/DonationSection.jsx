@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DonationSection = () => {
   return (
     <div className="bg-[#faf4e9] w-11/12 mx-auto py-8 px-5 mb-10 shadow-lg dark:bg-gray-900 rounded-xl">
@@ -24,15 +26,18 @@ const DonationSection = () => {
                   <h2 className="text-amber-600 text-lg font-bold">
                     Palestine: Donate life saving food
                   </h2>
-                  <span className="text-sm text-blue-300 underline">
+                  {/* <span className="text-sm text-blue-300 underline">
                     Read more
-                  </span>
+                  </span> */}
                 </div>
                 <div className="block mt-4">
-                  <div className="absolute bottom-2 left-5">
-                    <button className="bg-amber-500 hover:bg-amber-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl ">
+                  <div className="absolute bottom-10 left-5">
+                    <Link
+                      to="/donate"
+                      className="bg-amber-500 hover:bg-amber-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl "
+                    >
                       Donate now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -52,15 +57,18 @@ const DonationSection = () => {
                   <h2 className="text-amber-600 text-lg font-bold">
                     Syria: Share with families in need
                   </h2>
-                  <span className="text-sm text-blue-300 underline">
+                  {/* <span className="text-sm text-blue-300 underline">
                     Read more
-                  </span>
+                  </span> */}
                 </div>
                 <div className="block mt-4">
-                  <div className="absolute bottom-2 left-5">
-                    <button className="bg-amber-500 text-gray-100 font-medium py-2.5 px-4 rounded-xl hover:bg-amber-600">
+                  <div className="absolute bottom-10 left-5">
+                    <Link
+                      to="/donate"
+                      className="bg-amber-500 text-gray-100 font-medium py-2.5 px-4 rounded-xl hover:bg-amber-600"
+                    >
                       Donate now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -80,15 +88,18 @@ const DonationSection = () => {
                   <h2 className="text-amber-600 text-lg font-bold">
                     Lebanon: Help families in need
                   </h2>
-                  <span className="text-sm text-blue-300 underline">
+                  {/* <span className="text-sm text-blue-300 underline">
                     Read more
-                  </span>
+                  </span> */}
                 </div>
                 <div className="block mt-4">
-                  <div className="absolute bottom-2 left-5">
-                    <button className="bg-amber-500 hover:bg-amber-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl">
+                  <div className="absolute bottom-10 left-5">
+                    <Link
+                      to="/donate"
+                      className="bg-amber-500 hover:bg-amber-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl"
+                    >
                       Donate now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
