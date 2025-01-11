@@ -24,19 +24,3 @@
     <li>react-router-dom</li>
     <li>react-toastify</li>
 </ul>
-
-### .env Setup
-To securely manage environment variables, create a `.env` file in the root of your project and include the following:
-
-`PORT = port number`
-`DB_USER = username` 
-`DB_Pass = db pass`
-`JWT_SECRET = use your own`
-`NODE_ENV = development`
-### Local Installation Guide
-
-Follow the steps below to set up and run the backend of the **BiteBuddy Food Sharing Management** locally:
-
-1. **Clone the repository:**
-2. **Run npm install**
-3. **Run npm run start for node or npm run dev for nodemon**

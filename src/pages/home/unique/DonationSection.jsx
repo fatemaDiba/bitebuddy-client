@@ -1,11 +1,11 @@
 const DonationSection = () => {
   return (
-    <div className="mb-5 bg-gray-100 w-11/12 mx-auto p-4 sm:p-16 dark:bg-gray-900 rounded-xl">
+    <div className="bg-[#faf4e9] w-11/12 mx-auto py-8 px-5 mb-10 shadow-lg dark:bg-gray-900 rounded-xl">
       <div className="p-4 mb-6  mx-auto text-center leading-tight first-letter:capitalize dark:text-gray-100">
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
           Spreed Smile!
         </h2>
-        <p className=" text-base md:w-[70%] mx-auto text-center">
+        <p className="text-base md:w-[70%] mx-auto text-center">
           Join us in our mission to fight hunger by donating surplus food.
           Together, we can make a difference and provide meals to those in need.
           Every contribution counts!
@@ -21,16 +21,16 @@ const DonationSection = () => {
             <div className="p-6">
               <div className="capitalize flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-purple-600 text-lg font-bold">
+                  <h2 className="text-amber-600 text-lg font-bold">
                     Palestine: Donate life saving food
-                    <span className="ml-2 text-sm text-blue-300 underline">
-                      Read more
-                    </span>
                   </h2>
+                  <span className="text-sm text-blue-300 underline">
+                    Read more
+                  </span>
                 </div>
                 <div className="block mt-4">
                   <div className="absolute bottom-2 left-5">
-                    <button className="bg-purple-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl opacity-90 hover:opacity-100">
+                    <button className="bg-amber-500 hover:bg-amber-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl ">
                       Donate now
                     </button>
                   </div>
@@ -49,16 +49,16 @@ const DonationSection = () => {
             <div className="p-6">
               <div className="capitalize flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-purple-600 text-lg font-bold">
+                  <h2 className="text-amber-600 text-lg font-bold">
                     Syria: Share with families in need
-                    <span className="ml-2 text-sm text-blue-300 underline">
-                      Read more
-                    </span>
                   </h2>
+                  <span className="text-sm text-blue-300 underline">
+                    Read more
+                  </span>
                 </div>
                 <div className="block mt-4">
                   <div className="absolute bottom-2 left-5">
-                    <button className="bg-purple-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl opacity-90 hover:opacity-100">
+                    <button className="bg-amber-500 text-gray-100 font-medium py-2.5 px-4 rounded-xl hover:bg-amber-600">
                       Donate now
                     </button>
                   </div>
@@ -77,16 +77,16 @@ const DonationSection = () => {
             <div className="p-6">
               <div className="capitalize flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-purple-600 text-lg font-bold">
+                  <h2 className="text-amber-600 text-lg font-bold">
                     Lebanon: Help families in need
-                    <span className="ml-2 text-sm text-blue-300 underline">
-                      Read more
-                    </span>
                   </h2>
+                  <span className="text-sm text-blue-300 underline">
+                    Read more
+                  </span>
                 </div>
                 <div className="block mt-4">
                   <div className="absolute bottom-2 left-5">
-                    <button className="bg-purple-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl opacity-90 hover:opacity-100">
+                    <button className="bg-amber-500 hover:bg-amber-600 text-gray-100 font-medium py-2.5 px-4 rounded-xl">
                       Donate now
                     </button>
                   </div>

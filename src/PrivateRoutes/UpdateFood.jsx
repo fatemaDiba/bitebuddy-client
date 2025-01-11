@@ -71,16 +71,18 @@ const UpdateFood = () => {
       <Helmet>
         <title>Update food-BiteBuddy</title>
       </Helmet>
-      <div className="container md:w-11/12 mx-auto mb-20">
-        <div className="card bg-base-100 w-[70%] md:w-[50%] mx-auto shrink-0 shadow-2xl">
+      <div className="w-11/12 mx-auto mb-12 mt-28">
+        <div className="card bg-light-secondary/50 w-[90%] mx-auto shrink-0 shadow-2xl">
           <div className="card-body dark:text-white">
-            <h2 className="font-bold text-center text-base md:text-xl">
-              Update Your Food Information Now
+            <h2 className="font-bold text-center text-2xl sm:text-3xl lg:text-4xl">
+              <span className="text-amber-700">Update</span> Your
+              <span className="text-amber-700"> Food </span>
+              Information Now
             </h2>
             <form onSubmit={handleUpdateFoodBtn}>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text  dark:text-white">Food Name</span>
+                  <span className="label-text dark:text-white">Food Name</span>
                 </label>
                 <input
                   type="text"
@@ -156,7 +158,7 @@ const UpdateFood = () => {
               ></textarea>
 
               <div className="form-control mt-6 mb-4">
-                <button className="btn bg-purple-500 hover:bg-purple-600 text-white">
+                <button className="btn bg-amber-500 hover:bg-amber-600 text-white">
                   Update Food
                 </button>
               </div>

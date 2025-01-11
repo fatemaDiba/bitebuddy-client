@@ -46,66 +46,78 @@ const Login = () => {
       <Helmet>
         <title>LogIn-BiteBuddy</title>
       </Helmet>
-      <div className="container md:w-11/12 mx-auto mb-20">
-        <div className="card bg-base-100 w-[70%] md:w-[50%] mx-auto shrink-0 shadow-2xl">
-          <div className="card-body  dark:text-white">
-            <h2 className="font-bold text-center text-base md:text-xl">
-              LogIn Now
-            </h2>
-            <form onSubmit={handleSubmit}>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="email"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  required
-                  placeholder="password"
-                  className="input input-bordered"
-                />
+      <div className="w-10/12 mx-auto mb-20 mt-28">
+        <div className="grid lg:grid-cols-2 gap-4">
+          <div className="card row-start-2 lg:row-start-1 bg-light-secondary/50 shadow-2xl ">
+            <div className="card-body  dark:text-white">
+              <h2 className="font-bold text-center text-xl md:text-3xl">
+                <span className="text-amber-700">Login</span> Now
+              </h2>
+              <form onSubmit={handleSubmit}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="email"
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    placeholder="password"
+                    className="input input-bordered"
+                  />
 
-                <label className="label">
-                  <a className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
-              </div>
-              <div className="form-control mt-6 mb-4">
-                <button className="btn bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-400 text-white">
-                  Login
+                  <label className="label">
+                    <a className="label-text-alt link link-hover">
+                      Forgot password?
+                    </a>
+                  </label>
+                </div>
+                <div className="form-control mt-6 mb-4">
+                  <button className="btn bg-amber-500 hover:bg-amber-600 text-white">
+                    Login
+                  </button>
+                </div>
+              </form>
+              <div>
+                <p className="text-sm mb-2">Login with google</p>
+                <button
+                  className="btn font-bold bg-slate-200 hover:bg-slate-400 w-full dark:text-black"
+                  onClick={handleGoogleBtn}
+                >
+                  Google <FcGoogle className="text-xl" />
                 </button>
               </div>
-            </form>
-            <div>
-              <p className="text-sm mb-2">LogIn with google</p>
-              <button
-                className="btn font-bold bg-slate-200 hover:bg-slate-400 w-full dark:text-black"
-                onClick={handleGoogleBtn}
-              >
-                Google <FcGoogle className="text-xl" />
-              </button>
+              <div className="text-sm mt-3">
+                <p>
+                  Don't Have An Account?
+                  <Link
+                    to="/register"
+                    className="text-amber-700 font-bold ml-2"
+                  >
+                    Register
+                  </Link>
+                </p>
+              </div>
             </div>
-            <div className="text-sm mt-3">
-              <p>
-                Don't Have An Account?
-                <Link to="/register" className="text-purple-800 font-bold ml-2">
-                  Register
-                </Link>
-              </p>
-            </div>
+          </div>
+          <div className="row-start-1 lg:row-start-1 ">
+            <img
+              src="/assets/login1.png"
+              alt=""
+              className="w-[80%] lg:w-full mx-auto"
+            />
           </div>
         </div>
       </div>

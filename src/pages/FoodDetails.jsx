@@ -73,8 +73,8 @@ const FoodDetails = () => {
       <Helmet>
         <title>Food Details-BiteBuddy</title>
       </Helmet>
-      <div className="container w-10/12 mx-auto mb-20">
-        <div className="p-10 bg-base-200 rounded-2xl">
+      <div className="w-10/12 mx-auto mb-12 mt-28">
+        <div className="p-10 bg-light-secondary/50  rounded-2xl">
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <img src={food.foodImg} className="w-[50%] rounded-lg shadow-2xl" />
             <div className="space-y-3  dark:text-white">
@@ -108,7 +108,7 @@ const FoodDetails = () => {
               <div className="flex flex-col md:flex-row gap-5 flex-wrap pt-10 ">
                 <button
                   onClick={handleModal}
-                  className="btn btn-primary  dark:text-white"
+                  className="btn text-black bg-amber-500 hover:bg-amber-600 dark:text-white"
                 >
                   Request Food
                 </button>

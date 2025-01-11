@@ -3,6 +3,7 @@ import Card from "../../foodCard/Card";
 import useAxios from "../../hooks/useAxios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { MdFoodBank } from "react-icons/md";
 
 const FeaturedFoods = () => {
   const [foods, setFoods] = useState([]);
@@ -18,18 +19,19 @@ const FeaturedFoods = () => {
   }, []);
 
   return (
-    <div className="w-10/12 mx-auto mb-10">
-      <div className="mb-10 w-[90%] md:w-[70%] mx-auto text-center ">
+    <div className="w-10/12 md:w-11/12 mx-auto mb-10">
+      <div className="mb-14 md:w-[90%] mx-auto text-center ">
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
-          Share a Meal, Share the Love
+          Share A <span className="text-amber-700">Meal</span>, Share The
+          <span className="text-amber-700"> Love</span>
         </h2>
-        <p className="text-base w-[70%] mx-auto text-center">
+        <p className="text-base w-[90%] lg:w-[70%] mx-auto text-center">
           Your small act of kindness can bring a big smile. Explore our featured
           dishes and contribute to providing meals for those in need. Together,
           we can make a difference, one plate at a time.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-5 mb-10">
         {foods?.map((food) => {
           return <Card key={food._id} data={food}></Card>;
         })}
@@ -37,9 +39,10 @@ const FeaturedFoods = () => {
       <div className="text-center">
         <Link
           to="/available-foods"
-          className="btn bg-gradient-to-b from-purple-300 to-pink-300"
+          className="btn bg-amber-500 hover:bg-amber-600 font-semibold text-center text-black px-5"
         >
           Show All Foods
+          <MdFoodBank className="mr-2 text-xl" />
         </Link>
       </div>
     </div>

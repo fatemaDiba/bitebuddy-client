@@ -38,71 +38,99 @@ const AvailableFoods = () => {
     return food.foodName.toLowerCase().includes(query?.toLowerCase());
   });
 
+  const handleSortByQuantity = (e) => {
+    const sortValue = e.target.value;
+    setLoading(true);
+    axiosBase.post("/foods/sort-by-quantity", { sortValue }).then((res) => {
+      setFoods(res.data);
+      setLoading(false);
+    });
+  };
+
   return (
     <div>
       <Helmet>
         <title>Available foods-BiteBuddy</title>
       </Helmet>
-      {loading ? (
-        <Loading></Loading>
-      ) : (
-        <div className="container w-9/12 mx-auto mb-20 mt-10">
-          <div className="flex flex-col justify-center items-center mb-10 dark:text-white">
-            <h1 className="text-xl md:text-4xl font-bold mb-2 ">
-              Available Foods
-            </h1>
-            <p className="text-center text-sm md:text-base w-[80%]">
-              Explore a variety of available food donations ready for pickup!
-              Whether you're looking for homemade meals, fresh bread, or
-              delicious fruits, we've got you covered. Check the details, pickup
-              locations, and expiration times to claim your food before it's
-              gone.
-            </p>
-          </div>
-          <div className="flex md:flex-row flex-col gap-10 items-center justify-center mb-14">
-            {/* search bar */}
-            <div className="w-[70%] md:w-[40%]">
-              <label className="input input-bordered dark:border-white/50 flex items-center gap-2">
-                <input
-                  type="text"
-                  className="grow"
-                  placeholder="Search"
-                  onChange={handleSearch}
-                />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="h-4 w-4 opacity-70"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </label>
-            </div>
-            <div>
-              <button
-                onClick={handleLayout}
-                className="btn bg-gradient-to-b from-purple-300 to-pink-200"
+      <div className=" w-11/12 mx-auto mb-12 mt-28">
+        <div className="flex flex-col justify-center items-center mb-10 dark:text-white">
+          <h1 className="text-2xl md:text-4xl font-bold mb-2 ">
+            Available Foods
+          </h1>
+          <p className="text-center text-sm md:text-base w-[80%]">
+            Explore a variety of available food donations ready for pickup!
+            Whether you're looking for homemade meals, fresh bread, or delicious
+            fruits, we've got you covered. Check the details, pickup locations,
+            and expiration times to claim your food before it's gone.
+          </p>
+        </div>
+        <div className="flex md:flex-row flex-col gap-10 items-center justify-center mb-14">
+          {/* search bar */}
+          <div className="w-[70%] md:w-[40%]">
+            <label className="input input-bordered dark:border-white/50 flex items-center gap-2">
+              <input
+                type="text"
+                className="grow"
+                placeholder="Search"
+                onChange={handleSearch}
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                className="h-4 w-4 opacity-70"
               >
-                Change Layout
-              </button>
-            </div>
+                <path
+                  fillRule="evenodd"
+                  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </label>
           </div>
-          <div
-            className={`grid grid-cols-1 ${
-              grid ? "md:grid-cols-3" : "md:grid-cols-2"
-            } gap-6`}
-          >
-            {filteredFood?.map((food) => {
-              return <Card key={food._id} data={food}></Card>;
-            })}
+          {/* sort btn */}
+          <div>
+            <select
+              onChange={handleSortByQuantity}
+              className="select select-bordered w-full dark:border-white/60"
+            >
+              <option defaultValue value="">
+                Sort by (Default)
+              </option>
+              <option className="font-semibold" value="1">
+                Low Quantity
+              </option>
+              <option className="font-semibold" value="-1">
+                High Quantity
+              </option>
+            </select>
+          </div>
+          {/* change layout */}
+          <div>
+            <button
+              onClick={handleLayout}
+              className="btn bg-amber-500 hover:bg-amber-600"
+            >
+              Change Layout
+            </button>
           </div>
         </div>
-      )}
+        {loading ? (
+          <Loading></Loading>
+        ) : (
+          <>
+            <div
+              className={`grid grid-cols-1 sm:grid-cols-2 ${
+                grid ? "lg:grid-cols-4" : "lg:grid-cols-3"
+              } gap-6`}
+            >
+              {filteredFood?.map((food) => {
+                return <Card key={food._id} data={food}></Card>;
+              })}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };

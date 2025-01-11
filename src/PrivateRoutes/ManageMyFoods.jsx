@@ -7,6 +7,8 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 import Loading from "../loading/Loading";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+import { FaPencil } from "react-icons/fa6";
 
 const ManageMyFoods = () => {
   // const [foods, setFoods] = useState([]);
@@ -48,41 +50,6 @@ const ManageMyFoods = () => {
       toast.error("Failed to delete food!");
     },
   });
-
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "You won't be able to revert this!",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Yes, delete it!",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       fetch(
-  //         `https://visa-navigator-fawn.vercel.app/application/my-applications/${id}`,
-  //         {
-  //           method: "DELETE",
-  //         }
-  //       )
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //           if (data.deletedCount) {
-  //             Swal.fire({
-  //               title: "Deleted!",
-  //               text: "Your Application has been Canceled.",
-  //               icon: "success",
-  //             });
-  //             const remApplications = applications.filter(
-  //               (item) => item._id !== id
-  //             );
-  //             setApplications(remApplications);
-  //           }
-  //         })
-  //         .catch((err) => toast.error("Something Went Wrong!"));
-  //     }
-  //   });
-  // };
 
   const handleDeleteBtn = (id) => {
     Swal.fire({
@@ -128,7 +95,7 @@ const ManageMyFoods = () => {
   // };
 
   return (
-    <div className="container w-10/12 mx-auto mb-20 mt-10  bg-pink-100 px-14 py-5 rounded-2xl">
+    <div className="w-11/12 mx-auto mb-12 mt-28 bg-light-secondary/50  px-14 py-5 rounded-2xl">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -154,18 +121,18 @@ const ManageMyFoods = () => {
                   <td>{food.exDate}</td>
 
                   <td>
-                    <div className="flex flex-row gap-3">
+                    <div className="flex flex-row gap-4 items-center">
                       <Link
                         to={`/update-food/${food._id}`}
-                        className="btn bg-blue-200 border border-black/50"
+                        className="hover:scale-125 transition-transform ease-out"
                       >
-                        Update
+                        <FaPencil className=" text-black/70"></FaPencil>
                       </Link>
                       <button
                         onClick={() => handleDeleteBtn(food._id)}
-                        className="btn  bg-blue-200 border border-black/50"
+                        className="hover:scale-125 transition-transform ease-out"
                       >
-                        Delete
+                        <RiDeleteBin5Fill className="text-red-600 text-xl"></RiDeleteBin5Fill>
                       </button>
                     </div>
                   </td>

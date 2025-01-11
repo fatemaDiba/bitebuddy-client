@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdOutlineEditNote } from "react-icons/md";
+import { GrStatusGood } from "react-icons/gr";
+import { MdAccessTime } from "react-icons/md";
+import { TbPaperBag } from "react-icons/tb";
 
 const Card = ({ data }) => {
   const { _id, foodImg, foodName, location, exDate, quantity, note, status } =
     data;
 
   return (
-    <div>
-      <div className="card bg-base-100  shadow-xl">
+    <Link to={`/food-details/${_id}`} className="h-full">
+      <div className="card bg-[#faf4e9] shadow-xl hover:scale-105 transition-transform">
         <div className="h-[200px] overflow-hidden">
           <figure className="h-full rounded-xl">
             <img
@@ -16,26 +21,26 @@ const Card = ({ data }) => {
             />
           </figure>
         </div>
-        <div className="card-body h-80">
-          <h2 className="card-title font-bold">{foodName}</h2>
-          <p className="font-medium text-black/60">Quantity: {quantity}</p>
-          <p className="font-medium text-black/60">
-            PickUp Location: {location}
+        <div className="flex flex-col py-4 px-5 space-y-2 mb-5">
+          <h2 className="card-title font-bold mb-2">{foodName}</h2>
+          <p className="flex gap-2 items-center font-medium text-black/60">
+            <TbPaperBag /> {quantity}
           </p>
-          <p className="font-medium text-black/60">Expire date: {exDate}</p>
-          <p className="font-medium text-black/60">Note: {note}</p>
-          <p className="font-medium text-black/60">Status: {status}</p>
-          <div className="card-actions">
-            <Link
-              to={`/food-details/${_id}`}
-              className="border-0 bg-gradient-to-b from-purple-400 to-pink-400 font-semibold text-white px-4 py-2 rounded-lg shadow-md hover:shadow-lg text-sm"
-            >
-              See Details
-            </Link>
-          </div>
+          <p className="flex gap-2 items-center font-medium text-black/60">
+            <FaLocationDot /> {location}
+          </p>
+          <p className="flex gap-2 items-center font-medium text-black/60">
+            <MdAccessTime /> {exDate}
+          </p>
+          <p className="flex gap-2 items-center font-medium text-black/60">
+            <MdOutlineEditNote /> {note}
+          </p>
+          <p className="flex gap-2 items-center font-medium text-black/60">
+            <GrStatusGood /> {status}
+          </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

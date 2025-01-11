@@ -12,6 +12,16 @@ import PrivateRoute from "../PrivateRoutes/private/PrivateRoute";
 import PrivateRegLog from "../PrivateRoutes/private/PrivateRegLog";
 import FoodDetails from "../pages/FoodDetails";
 import UpdateFood from "../PrivateRoutes/UpdateFood";
+import Recipe from "../footerPage/Recipe";
+import PrivacyPolicy from "../footerPage/PrivacyPolicy";
+import Accessibility from "../footerPage/Accessibility";
+import ContactUs from "../footerPage/ContactUs";
+import ManageCookie from "../footerPage/ManageCookie";
+import Bread from "../cookingblog/Bread";
+import Pizza from "../cookingblog/Pizza";
+import Salad from "../cookingblog/Salad";
+import SuccessStories from "../footerPage/SuccessStories";
+import CommunityEvent from "../footerPage/CommunityEvent";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +92,48 @@ const router = createBrowserRouter([
             <UpdateFood></UpdateFood>
           </PrivateRoute>
         ),
+      },
+      // footer section page
+      {
+        path: "/recipe",
+        element: <Recipe></Recipe>,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
+      },
+      {
+        path: "/accessibility",
+        element: <Accessibility></Accessibility>,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/manage-cookie",
+        element: <ManageCookie></ManageCookie>,
+      },
+      {
+        path: "/success-stories",
+        element: <SuccessStories></SuccessStories>,
+      },
+      {
+        path: "/events",
+        element: <CommunityEvent></CommunityEvent>,
+      },
+      // cooking blog routes
+      {
+        path: "/bread-recipe",
+        element: <Bread></Bread>,
+      },
+      {
+        path: "/pizza-recipe",
+        element: <Pizza></Pizza>,
+      },
+      {
+        path: "/salad-recipe",
+        element: <Salad></Salad>,
       },
     ],
   },
