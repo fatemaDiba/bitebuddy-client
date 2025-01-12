@@ -6,7 +6,7 @@ const SuccessStories = () => {
       <Helmet>
         <title>Success Stories-BiteBuddy</title>
       </Helmet>
-      <section className="w-10/12 mx-auto mt-28 mb-14 md:mb-20 bg-[#faf4e9] rounded-2xl">
+      <section className="w-11/12 sm:container xl:w-10/12 mx-auto mt-28 mb-14 md:mb-20 bg-[#faf4e9] rounded-2xl">
         <div className="px-7 py-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-12">
             BiteBuddy <span className="text-amber-700">Success</span> Stories

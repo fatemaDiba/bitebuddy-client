@@ -50,7 +50,7 @@ const Header = () => {
 
   return (
     <header className="w-full py-2 fixed z-50 top-0 bg-light-secondary/90 shadow-xl backdrop-blur-sm">
-      <div className="navbar justify-between w-11/12 mx-auto">
+      <div className="navbar justify-between w-11/12 sm:container xl:w-10/12 mx-auto">
         <div className="">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

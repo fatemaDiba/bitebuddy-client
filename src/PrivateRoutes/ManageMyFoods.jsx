@@ -95,7 +95,7 @@ const ManageMyFoods = () => {
   // };
 
   return (
-    <div className="w-11/12 mx-auto mb-12 mt-28 bg-light-secondary/50  px-14 py-5 rounded-2xl">
+    <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-12 mt-28 bg-light-secondary/50  px-14 py-5 rounded-2xl">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

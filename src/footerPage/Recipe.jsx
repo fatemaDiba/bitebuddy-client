@@ -12,7 +12,7 @@ const Recipe = () => {
         <h1 className="text-4xl font-bold drop-shadow-lg">Popular Recipes</h1>
       </header>
 
-      <main className="container mx-auto py-10 px-4">
+      <main className="w-11/12 sm:container xl:w-10/12 mx-auto py-10 px-4">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
           Discover Delicious Recipes
         </h2>

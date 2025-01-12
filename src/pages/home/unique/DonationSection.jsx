@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const DonationSection = () => {
   return (
-    <div className="bg-[#faf4e9] w-11/12 mx-auto py-8 px-5 mb-10 shadow-lg dark:bg-gray-900 rounded-xl">
+    <div className="bg-[#faf4e9] w-11/12 sm:container xl:w-10/12 mx-auto py-8 px-5 mb-10 shadow-lg dark:bg-gray-900 rounded-xl">
       <div className="p-4 mb-6  mx-auto text-center leading-tight first-letter:capitalize dark:text-gray-100">
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
           Spreed Smile!

@@ -30,7 +30,7 @@ const Register = () => {
         toast.success("Successfully registered user");
 
         updateUser(name, photoUrl)
-          .then((res) => {})
+          .then((res) => { })
           .catch((error) => {
             toast.error("Something went wrong");
           });
@@ -59,84 +59,86 @@ const Register = () => {
       <Helmet>
         <title>Register-BiteBuddy</title>
       </Helmet>
-      <div className="w-10/12 mx-auto mt-28 mb-20">
-        <div className="grid lg:grid-cols-2 lg:gap-10">
-          <div className="card row-start-2 lg:row-start-1 bg-light-secondary/50 shadow-2xl">
+      <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-14 mt-32">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="card bg-light-secondary/50 shadow-2xl p-4">
             <div className="card-body dark:text-white">
-              <h2 className="font-bold text-center text-2xl md:text-4xl">
+              <h2 className="font-bold text-center text-2xl md:text-4xl mb-6">
                 <span className="text-amber-700">Register</span> Now
               </h2>
               <form onSubmit={handleRegisterBtn}>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Name</span>
-                  </label>
-                  <input
-                    type="name"
-                    name="name"
-                    placeholder="name"
-                    className="input input-bordered"
-                    required
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Name</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Email</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Photo URL</span>
+                    </label>
+                    <input
+                      type="url"
+                      name="photo"
+                      placeholder="Photo URL"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Password</span>
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="email"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Photo URL</span>
-                  </label>
-                  <input
-                    type="url"
-                    name="photo"
-                    placeholder="photo url"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Password</span>
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    className="input input-bordered"
-                    required
-                  />
+                <div className="form-control mt-6">
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
                     </a>
                   </label>
-                </div>
-                <div className="form-control mt-6 mb-4">
-                  <button className="btn bg-amber-500 hover:bg-amber-600 text-white">
+                  <button className="btn bg-amber-500 hover:bg-amber-600 text-white w-full">
                     Register
                   </button>
                 </div>
               </form>
-              <div>
-                <p className="text-sm mb-2">Register with google</p>
+              <div className="my-6">
+                <p className="text-sm mb-2 text-black">Register with Google</p>
                 <button
                   onClick={handleGoogleBtn}
-                  className="btn bg-slate-200 hover:bg-slate-400 w-full font-bold dark:text-black"
+                  className="btn bg-slate-200 hover:bg-slate-400 w-full font-bold text-black"
                 >
                   Google <FcGoogle className="text-xl" />
                 </button>
               </div>
-              <div className="text-sm mt-3">
-                <p>
+              <div className="text-sm">
+                <p className="text-black">
                   Already Have An Account?
                   <Link to="/login" className="text-amber-700 font-bold ml-2">
                     LogIn
@@ -145,11 +147,11 @@ const Register = () => {
               </div>
             </div>
           </div>
-          <div className="row-start-1 lg:row-start-1 ">
+          <div className="w-full justify-center hidden md:flex">
             <img
               src="/assets/register.png"
-              alt=""
-              className="w-[80%] lg:w-full mx-auto"
+              alt="Register Illustration"
+              className="w-[90%] sm:w-[80%] lg:w-[70%] xl:w-[60%] object-contain"
             />
           </div>
         </div>

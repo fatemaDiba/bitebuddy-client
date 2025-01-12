@@ -73,7 +73,7 @@ const FoodDetails = () => {
       <Helmet>
         <title>Food Details-BiteBuddy</title>
       </Helmet>
-      <div className="w-10/12 mx-auto mb-12 mt-28">
+      <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-12 mt-28">
         <div className="p-10 bg-light-secondary/50  rounded-2xl">
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <img src={food.foodImg} className="w-[50%] rounded-lg shadow-2xl" />

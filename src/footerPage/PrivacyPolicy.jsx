@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="w-10/12 mx-auto mt-20 lg:mt-28 mb-10">
+    <div className="w-11/12 sm:container xl:w-10/12 mx-auto mt-20 lg:mt-28 mb-10">
       <Helmet>
         <title>Privacy & Policy-BiteBuddy</title>
       </Helmet>

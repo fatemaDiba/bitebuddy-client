@@ -2,7 +2,7 @@ import { FaLink } from "react-icons/fa6";
 
 const CookingBlog = () => {
   return (
-    <div id="cooking-blog" className="w-10/12 md:w-11/12 mx-auto mb-10">
+    <div id="cooking-blog" className="w-11/12 sm:container xl:w-10/12 mx-auto mb-10">
       <div className="border-b mb-5 flex justify-between text-sm">
         <div className="text-amber-600 flex items-center pb-2 pr-2 border-b-2 border-amber-700 uppercase">
           <svg

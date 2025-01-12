@@ -1,6 +1,6 @@
 const Impact = () => {
   return (
-    <div className="w-10/12 mx-auto mb-20">
+    <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-20">
       <h2 className="text-2xl md:text-4xl font-bold mb-10 text-center">
         Our Impact
       </h2>

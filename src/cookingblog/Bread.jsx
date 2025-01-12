@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 const Bread = () => {
   return (
-    <div className="w-10/12 px-5 md:px-10 py-5 md:py-14 mt-24 md:mt-28 mb-14 md:mb-20 mx-auto bg-[#faf4e9] shadow-lg  text-gray-800 rounded-2xl">
+    <div className="w-11/12 sm:container xl:w-10/12 px-5 md:px-10 py-5 md:py-14 mt-24 md:mt-28 mb-14 md:mb-20 mx-auto bg-[#faf4e9] shadow-lg  text-gray-800 rounded-2xl">
       <Helmet>
         <title>Bread Recipe-BiteBuddy</title>
       </Helmet>

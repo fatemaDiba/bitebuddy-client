@@ -11,7 +11,7 @@ const Card = ({ data }) => {
 
   return (
     <Link to={`/food-details/${_id}`} className="h-full">
-      <div className="card bg-[#faf4e9] shadow-xl hover:scale-105 transition-transform">
+      <div className="card bg-[#faf4e9] shadow-xl hover:scale-105 transition-transform h-full">
         <div className="h-[200px] overflow-hidden">
           <figure className="h-full rounded-xl">
             <img

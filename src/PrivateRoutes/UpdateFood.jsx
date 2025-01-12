@@ -71,7 +71,7 @@ const UpdateFood = () => {
       <Helmet>
         <title>Update food-BiteBuddy</title>
       </Helmet>
-      <div className="w-11/12 mx-auto mb-12 mt-28">
+      <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-12 mt-28">
         <div className="card bg-light-secondary/50 w-[90%] mx-auto shrink-0 shadow-2xl">
           <div className="card-body dark:text-white">
             <h2 className="font-bold text-center text-2xl sm:text-3xl lg:text-4xl">

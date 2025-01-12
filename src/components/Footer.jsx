@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="text-white bg-gray-900">
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 sm:container xl:w-10/12 mx-auto">
         <div className="py-10 md:py-20">
           <div className="flex flex-col items-center justify-center">
             <img src="/assets/logo.png" alt="" className="w-12 md:w-14 mb-2" />
@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="border-t-2 border-[#09080F1A] mt-10">
-            <footer className="grid grid-cols-2 lg:grid-cols-4 gap-16 p-10 mx-auto">
+            <footer className="grid grid-cols-2 lg:grid-cols-4 gap-10 p-10 mx-auto">
               <nav className="flex flex-col gap-1 ">
                 <p className="text-base md:text-lg text-white/90 mb-2">
                   Our Impact

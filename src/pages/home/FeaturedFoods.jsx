@@ -19,7 +19,7 @@ const FeaturedFoods = () => {
   }, []);
 
   return (
-    <div className="w-10/12 md:w-11/12 mx-auto mb-10">
+    <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-10">
       <div className="mb-14 md:w-[90%] mx-auto text-center ">
         <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center">
           Share A <span className="text-amber-700">Meal</span>, Share The

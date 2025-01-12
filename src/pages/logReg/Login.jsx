@@ -46,15 +46,15 @@ const Login = () => {
       <Helmet>
         <title>LogIn-BiteBuddy</title>
       </Helmet>
-      <div className="w-10/12 mx-auto mb-20 mt-28">
-        <div className="grid lg:grid-cols-2 gap-4">
-          <div className="card row-start-2 lg:row-start-1 bg-light-secondary/50 shadow-2xl ">
-            <div className="card-body  dark:text-white">
-              <h2 className="font-bold text-center text-xl md:text-3xl">
+      <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-14 mt-32">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="card bg-light-secondary/50 shadow-2xl p-6 lg:p-10">
+            <div className="card-body text-white">
+              <h2 className="font-bold text-center text-xl text-black/90 md:text-4xl mb-6">
                 <span className="text-amber-700">Login</span> Now
               </h2>
               <form onSubmit={handleSubmit}>
-                <div className="form-control">
+                <div className="form-control mb-4">
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
@@ -66,7 +66,7 @@ const Login = () => {
                     className="input input-bordered"
                   />
                 </div>
-                <div className="form-control">
+                <div className="form-control mb-4">
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
@@ -77,7 +77,6 @@ const Login = () => {
                     placeholder="password"
                     className="input input-bordered"
                   />
-
                   <label className="label">
                     <a className="label-text-alt link link-hover">
                       Forgot password?
@@ -90,17 +89,18 @@ const Login = () => {
                   </button>
                 </div>
               </form>
-              <div>
-                <p className="text-sm mb-2">Login with google</p>
+              <div className="mb-4">
+                <p className="text-sm mb-2 text-black">Login with Google</p>
                 <button
-                  className="btn font-bold bg-slate-200 hover:bg-slate-400 w-full dark:text-black"
+                  className="btn font-bold bg-slate-200 hover:bg-slate-400 w-full text-black"
                   onClick={handleGoogleBtn}
                 >
                   Google <FcGoogle className="text-xl" />
                 </button>
               </div>
-              <div className="text-sm mt-3">
-                <p>
+
+              <div className="text-sm">
+                <p className="text-black">
                   Don't Have An Account?
                   <Link
                     to="/register"
@@ -112,11 +112,11 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div className="row-start-1 lg:row-start-1 ">
+          <div className="w-full hidden md:flex justify-center">
             <img
               src="/assets/login1.png"
-              alt=""
-              className="w-[80%] lg:w-full mx-auto"
+              alt="Login Illustration"
+              className="w-[90%] sm:w-[80%] lg:w-[70%] xl:w-[60%] object-contain"
             />
           </div>
         </div>

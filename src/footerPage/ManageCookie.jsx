@@ -15,7 +15,7 @@ const ManageCookie = () => {
     form.reset();
   };
   return (
-    <div className="w-10/12 mx-auto mt-24 lg:mt-28 mb-10">
+    <div className="w-11/12 sm:container xl:w-10/12 mx-auto mt-24 lg:mt-28 mb-10">
       <Helmet>
         <title>Manage Cookie-BiteBuddy</title>
       </Helmet>

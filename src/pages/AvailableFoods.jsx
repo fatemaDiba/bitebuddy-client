@@ -52,7 +52,7 @@ const AvailableFoods = () => {
       <Helmet>
         <title>Available foods-BiteBuddy</title>
       </Helmet>
-      <div className=" w-11/12 mx-auto mb-12 mt-28">
+      <div className="w-11/12 sm:container xl:w-10/12 mx-auto mb-12 mt-28">
         <div className="flex flex-col justify-center items-center mb-10 dark:text-white">
           <h1 className="text-2xl md:text-4xl font-bold mb-2 ">
             Available Foods
@@ -64,9 +64,9 @@ const AvailableFoods = () => {
             and expiration times to claim your food before it's gone.
           </p>
         </div>
-        <div className="flex md:flex-row flex-col gap-10 items-center justify-center mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:justify-items-center mb-14">
           {/* search bar */}
-          <div className="w-[70%] md:w-[40%]">
+          <div className="col-span-2 md:col-span-1">
             <label className="input input-bordered dark:border-white/50 flex items-center gap-2">
               <input
                 type="text"
